@@ -39,14 +39,20 @@ git clone https://github.com/YOUR_USERNAME/boring-business-finder.git
 cd boring-business-finder
 ```
 
-### 2. Install dependencies
+### 2. Set up virtual environment and install dependencies
 
 ```bash
-# Using pip (Python 3.9+ required)
-pip install -r requirements.txt
+# Create virtual environment (Python 3.9+ required)
+python3 -m venv venv
 
-# Or if you get permission errors on Linux/Mac:
-pip install -r requirements.txt --break-system-packages
+# Activate virtual environment
+# On Mac/Linux:
+source venv/bin/activate
+# On Windows:
+venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
 ```
 
 ### 3. Get your SerpAPI key (required for real data)
@@ -100,6 +106,12 @@ The system works without any API keys using **demo data** - useful for testing t
 ---
 
 ## 📖 Usage Examples
+
+**Note:** Always activate your virtual environment before running commands:
+```bash
+source venv/bin/activate  # Mac/Linux
+venv\Scripts\activate     # Windows
+```
 
 ### Run Complete Pipeline
 ```bash
@@ -161,14 +173,27 @@ Add your SerpAPI key to `.env` file (see setup instructions above)
 
 ### "ModuleNotFoundError"
 ```bash
+# Make sure your virtual environment is activated
+source venv/bin/activate  # Mac/Linux
+# or
+venv\Scripts\activate  # Windows
+
+# Then reinstall dependencies
 pip install -r requirements.txt
 ```
 
-### Permission errors on pip install
+### Virtual environment not activating
 ```bash
-pip install -r requirements.txt --user
+# If activation fails, try recreating the virtual environment
+rm -rf venv  # Mac/Linux
 # or
-pip install -r requirements.txt --break-system-packages
+rmdir /s venv  # Windows
+
+# Then recreate it
+python3 -m venv venv
+source venv/bin/activate  # Mac/Linux
+venv\Scripts\activate  # Windows
+pip install -r requirements.txt
 ```
 
 ---

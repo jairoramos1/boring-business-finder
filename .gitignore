@@ -1,0 +1,40 @@
+# Environment
+.env
+.env.local
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Data files (regenerated on each run)
+data/*.json
+data/*.db
+output/*.json
+output/*.csv
+output/*.md
+
+# Keep directory structure
+!data/.gitkeep
+!output/.gitkeep
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
